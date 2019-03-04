@@ -50,6 +50,16 @@ const navBar = document.querySelectorAll("a");
 
 navBar.forEach(function(item, i) {
   item.textContent = navItems[`nav-item-${i + 1}`];
+  item.style.color = "green";
+});
+
+const navAdditions = ["Specials", "Follow"];
+console.log(navAdditions);
+navAdditions.forEach(currentValue => {
+  const newNav = document.createElement("a");
+  const navList = document.querySelector("nav");
+  newNav.textContent = currentValue;
+  navList.append(newNav);
 });
 
 let logo = document.getElementById("logo-img");
