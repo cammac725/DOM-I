@@ -42,53 +42,85 @@ const siteContent = {
   }
 };
 
-// Example: Update the img src for the logo
+// nav
+
+let navItems = siteContent["nav"];
+
+const navBar = document.querySelectorAll("a");
+
+navBar.forEach(function(item, i) {
+  item.textContent = navItems[`nav-item-${i + 1}`];
+});
+
 let logo = document.getElementById("logo-img");
 logo.setAttribute("src", siteContent["nav"]["img-src"]);
 
-// nav
-const navItem = document.querySelector("a");
-// navItem.forEach(currentValue => {
-//   navItem.textContent = ["nav"]["nav-item-1"];
-// });
+// cta
+let ctaItems = siteContent["cta"];
+const ctaHeader = document.getElementsByTagName("h1");
+ctaHeader[0].textContent = ctaItems["h1"];
 
-const ctaHeader = document.querySelector("h1");
-// ctaHeader.textContent = "DOM Is Awesome";
+const ctaButton = document.getElementsByTagName("button");
+ctaButton[0].textContent = ctaItems["button"];
 
-const ctaButton = document.querySelector("button");
-
-const ctaImg = document.getElementById("cta-img");
+let ctaImg = document.getElementById("cta-img");
 ctaImg.setAttribute("src", siteContent["cta"]["img-src"]);
 
-const featuresHeader = document.querySelector(".top-content h4:nth-of-type(1n)";
+// //top-content
 
-const featuresContent = document.querySelector(".top-content p:nth-of-type(1n)");
+let mainContent = siteContent["main-content"];
 
-const aboutHeader = document.querySelector(".top-content h4:nth-of-type(2n)");
+const featuresHeader = document.querySelectorAll("h4")[0];
+featuresHeader.textContent = mainContent["features-h4"];
 
-const aboutContent = document.querySelector(".top-content p:nth-of-type(2n)");
+const featuresContent = document.querySelectorAll("p")[0];
+featuresContent.textContent = mainContent["features-content"];
 
-const middleImg = document.getElementById('middle-img');
-middleImg.setAttribute('src', siteContent['main-content']['middle-img-src']);
+const aboutHeader = document.querySelectorAll("h4")[1];
+aboutHeader.textContent = mainContent["about-h4"];
 
-const servicesHeader = document.querySelector('.bottom-content h4:nth-of-type(1n)');
+const aboutContent = document.querySelectorAll("p")[1];
+aboutContent.textContent = mainContent["about-content"];
 
-const servicesContent = document.querySelector('.bottom-content p:nth-of-type(1n)');
+const middleImg = document.getElementById("middle-img");
+middleImg.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
 
-const productsHeader = document.querySelector('.bottom-content h4:nth-of-type(2n)');
+const servicesHeader = document.querySelectorAll("h4")[2];
+servicesHeader.textContent = mainContent["services-h4"];
 
-const productsContent = document.querySelector('.bottom-content p:nth-of-type(2n)');
+const servicesContent = document.querySelectorAll("p")[2];
+servicesContent.textContent = mainContent["services-content"];
 
-const visionHeader = document.querySelector('.bottom-content h4:nth-of-type(3n)');
+const productsHeader = document.querySelectorAll("h4")[3];
+productsHeader.textContent = mainContent["product-h4"];
 
-const visionContent = document.querySelector('.bottom-content p:nth-of-type(3n)');
+const productsContent = document.querySelectorAll("p")[3];
+productsContent.textContent = mainContent["product-content"];
 
-const contactHeader = document.querySelector('.contact h4');
+const visionHeader = document.querySelectorAll("h4")[4];
+visionHeader.textContent = mainContent["vision-h4"];
 
-const contactContent = document.querySelector('.contact p:nth-of-type(1n)');
+const visionContent = document.querySelectorAll("p")[4];
+visionContent.textContent = mainContent["vision-content"];
 
-const contactContent = document.querySelector('.contact p:nth-of-type(2n)');
+// Contact
 
-const contactContent = document.querySelector('.contact p:nth-of-type(3n)');
+let contactSection = siteContent["contact"];
 
-const footerContent = document.querySelector('footer p');
+const contactHeader = document.querySelector(".contact h4");
+contactHeader.textContent = contactSection["contact-h4"];
+
+const contactAddress = document.querySelectorAll(".contact p")[0];
+contactAddress.textContent = contactSection["address"];
+
+const contactPhone = document.querySelectorAll(".contact p")[1];
+contactPhone.textContent = contactSection["phone"];
+
+const contactEmail = document.querySelectorAll(".contact p")[2];
+contactEmail.textContent = contactSection["email"];
+
+//footer
+let footer = siteContent["footer"];
+
+const footerContent = document.querySelector("footer p");
+footerContent.textContent = footer["copyright"];
