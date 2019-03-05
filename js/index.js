@@ -54,11 +54,11 @@ navBar.forEach(function(item, i) {
 });
 
 const navAdditions = ["Specials", "Follow"];
-console.log(navAdditions);
 navAdditions.forEach(currentValue => {
   const newNav = document.createElement("a");
   const navList = document.querySelector("nav");
   newNav.textContent = currentValue;
+  newNav.style.color = "green";
   navList.append(newNav);
 });
 
@@ -66,6 +66,7 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute("src", siteContent["nav"]["img-src"]);
 
 // cta
+
 let ctaItems = siteContent["cta"];
 const ctaHeader = document.getElementsByTagName("h1");
 ctaHeader[0].textContent = ctaItems["h1"];
@@ -76,7 +77,7 @@ ctaButton[0].textContent = ctaItems["button"];
 let ctaImg = document.getElementById("cta-img");
 ctaImg.setAttribute("src", siteContent["cta"]["img-src"]);
 
-// //top-content
+// top-content
 
 let mainContent = siteContent["main-content"];
 
@@ -129,8 +130,19 @@ contactPhone.textContent = contactSection["phone"];
 const contactEmail = document.querySelectorAll(".contact p")[2];
 contactEmail.textContent = contactSection["email"];
 
-//footer
+// footer
+
 let footer = siteContent["footer"];
 
 const footerContent = document.querySelector("footer p");
 footerContent.textContent = footer["copyright"];
+
+const subHeaders = document.querySelectorAll("h4");
+subHeaders.forEach(currentValue => {
+  currentValue.style.color = "crimson";
+});
+
+const paragraphs = document.querySelectorAll("p");
+paragraphs.forEach(currentValue => {
+  currentValue.style.fontWeight = "bold";
+});
